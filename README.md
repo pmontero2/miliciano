@@ -60,7 +60,7 @@ Usuario → Hermes (planifica) → Nemoclaw (valida) → OpenClaw (ejecuta) → 
 ### Requisitos
 - **OS**: Linux (Ubuntu 22.04+)
 - **Runtime**: Node.js >= 18, Python 3.10+
-- **Opcional**: Docker (para Nemoclaw full)
+- **Instalación**: npm global + runtime Python local gestionado por Miliciano
 
 ### Instalar
 ```bash
@@ -314,7 +314,7 @@ Si tu entorno todavía no tiene `pytest`, mira [TESTING_SETUP.md](TESTING_SETUP.
 ## 📚 Documentación
 
 - **[ARCHITECTURE.md](docs/ARCHITECTURE.md)** - Arquitectura del sistema
-- **[DEPLOYMENT.md](docs/DEPLOYMENT.md)** - Empaquetado, Docker y despliegue
+- **[DEPLOYMENT.md](docs/DEPLOYMENT.md)** - Instalación, packaging npm y despliegue operativo
 - **[SECURITY.md](docs/SECURITY.md)** - Modelo de seguridad
 - **[TROUBLESHOOTING.md](docs/TROUBLESHOOTING.md)** - Solución de problemas
 - **[CHANGELOG.md](CHANGELOG.md)** - Historial de cambios
@@ -328,11 +328,12 @@ Si tu entorno todavía no tiene `pytest`, mira [TESTING_SETUP.md](TESTING_SETUP.
 
 ```
 miliciano/
-├── bin/miliciano.js              # Entry point
-├── miliciano-poc/bin/            # Scripts Python
-├── tests/                        # Suite de tests
+├── bin/miliciano.js              # Entry point npm -> Python
+├── miliciano-poc/bin/            # Runtime y comandos Python
+├── miliciano-poc/config/         # Config base del runtime
 ├── docs/                         # Documentación
-└── package.json                  # npm config
+├── tests/                        # Suite de tests
+└── package.json                  # Publicación npm y wrapper CLI
 ```
 
 ---
